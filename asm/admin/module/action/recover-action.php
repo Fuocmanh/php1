@@ -56,7 +56,7 @@
 <body>
     <!-- <pre> -->
     <?php
-    require '../include/connect.php';
+    require ('../../include/connect.php');
     if (isset($_POST['entercode'])) :
         $code = $_POST['code'];
         if ($code == $_POST['codeenter']) :
@@ -70,7 +70,7 @@
 
             // print_r($user);
     ?>
-            <form action="resetpass.php" method="post">
+            <form action="#" method="post">
                 <?php 
                     echo'<div class="in4">';
                     echo '<p>Email:</p><div class="text"><b>'.$_POST['email'].'</b></div>';
@@ -81,7 +81,7 @@
                 <input type="hidden" name="name" id="" value="<?= $ad['name'] ?>">
                 <input type="hidden" name="email" id="" value="<?= $ad['email'] ?>">
                 <label for="password">Password:</label>
-                <input type="password" class="form-control" name="password" id="" placeholder="<?= $ad['pass'] ?>" required>
+                <input type="password" class="form-control" name="password" id="" placeholder="******" required>
                 <br>
                 <button type="submit"  class="btn btn-primary" name="edit">Submit</button>
             </form>
@@ -92,6 +92,25 @@
         endif;
     endif;
     ?>
+    <?php
+if (isset($_POST['edit'])) {
+    require ('../../include/connect.php');
+    // lay thong tin tu form edit 
+    $ad_id = $_POST['user_id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $pass=md5($_POST['password']);
+
+    // cau lenh edit 
+    $query = "UPDATE admin SET ad_id='$ad_id',name='$name', email='$email', pass='$pass' WHERE name = '$name';";
+    // thuc hien sua 
+    if ($conn->query($query) === true) {
+        // chuyen huong qua trang list 
+        header('location: ../../pages/LogIn.php');
+    }
+}
+
+?>
 </body>
 
 </html>

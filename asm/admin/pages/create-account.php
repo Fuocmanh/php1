@@ -25,7 +25,7 @@
             <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
               Create account
             </h1>
-            <form action="create-action.php" method="post">
+            <form action="../module/action/create-action.php" method="post">
               <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Your name</span>
                 <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" required name="name" placeholder="Enter your name" />

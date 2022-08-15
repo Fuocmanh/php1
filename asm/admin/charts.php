@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("location: pages/login.php");
+}
+?>
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
@@ -47,7 +53,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="dashboard.php"
+                href="index.php"
               >
                 <svg
                   class="w-5 h-5"
@@ -270,7 +276,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="dashboard.php"
+                href="index.php"
               >
                 <svg
                   class="w-5 h-5"
