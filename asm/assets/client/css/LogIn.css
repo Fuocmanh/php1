@@ -2808,3 +2808,5 @@ footer>.bot {
     font-size: 13px;
   }
 }
+form >a{color:gray; font-weight: bold; text-decoration: underline;}
+form >a:hover{color:black}

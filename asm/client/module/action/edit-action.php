@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['edit'])) {
-    require 'include/connect.php';
+    require '../../include/connect.php';
     // lay thong tin tu form edit 
     $user_id = $_POST['user_id'];
     $name = $_POST['name'];
@@ -12,7 +12,7 @@ if (isset($_POST['edit'])) {
     // thuc hien sua 
     if ($conn->query($query) === true) {
         // chuyen huong qua trang list 
-        header('location: LogIn.php');
+        header('location: ../../LogIn.php');
     }
 }
 

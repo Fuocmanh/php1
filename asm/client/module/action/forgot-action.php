@@ -6,25 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/client/css/LogIn.css">
+    <link rel="stylesheet" href="../../../assets/client/css/LogIn.css">
 
 </head>
 
 <body>
     <?php
-    require('include/connect.php');
+    require('../../include/connect.php');
     if (isset($_POST['forgot'])) :
         $email = $_POST['email'];
         $code = $_POST['code'];
-        include('include/sendmail.php');
+        include('../../include/sendmail.php');
     ?>
          <div style="height: 107px"></div>
 
 
 <section class="boxall">
-    <?php include "include/header.php" ;?>
+    <?php include "../../include/header.php" ;?>
     <!-- form đăng nhập -->
-    <form name="f1" id="f" action="edit.php" method="post">
+    <form name="f1" id="f" action="../pages/edit.php" method="post">
         <h2>Recover password</h2>
         <hr>
         <section class="form">
@@ -41,11 +41,11 @@
 <p class="or">OR</p>
 <section class="fb">
     <p>FACEBOOK</p>
-    <img src="../assets/client/images/logofb.png">
+    <img src="../../../assets/client/images/logofb.png">
 </section>
 <section class="fb">
     <p>INSTAGRAM</p>
-    <img src="../assets/client/images/logoinsta.png">
+    <img src="../../../assets/client/images/logoinsta.png">
 </section>
 </section>
 <!-- giới thiệu về đăng kí tài khoảng cho trường hợp chưa có tài khoảng -->
@@ -75,7 +75,7 @@
     </section>
 </section>
 </section>
-<?php include "include/footer.php" ?>
+<?php include "../../include/footer.php" ?>
 </section>
     <?php
     endif;

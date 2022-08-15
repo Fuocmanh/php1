@@ -14,16 +14,12 @@
 </head>
 
 <body>
-  <audio autoplay>
-    <source src="./audio/Action-Rock.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
   <div style="height: 107px"></div>
 
   <section class="boxall">
     <?php include "include/header.php" ?>
     <!-- form đăng kí -->
-    <form name="f1" method="post" action="signUp-action.php">
+    <form name="f1" method="post" action="module/action/signUp-action.php">
       <h2>Register</h2>
       <section class="form">
         <section class="form-input">

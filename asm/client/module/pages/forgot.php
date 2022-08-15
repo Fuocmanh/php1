@@ -7,44 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adidas Official - Log In</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../assets/client/css/LogIn.css">
+    <link rel="stylesheet" href="../../../assets/client/css/LogIn.css">
     <link rel="icon" href="https://pngimg.com/uploads/adidas/adidas_PNG17.png" type="image/x-icon">
-    <script type="text/javascript" src="../assets/client/javascript/login.js"> </script>
+    <script type="text/javascript" src="../../../assets/client/javascript/login.js"> </script>
 </head>
 
 <body>
     <div style="height: 107px"></div>
-
-
     <section class="boxall">
-        <?php include "include/header.php" ?>
+        <?php include "../../include/header.php";
+        $min=100000;
+        $max=999999;
+         ?>
         <!-- form đăng nhập -->
-        <form name="f1" id="f" action="module/action/login-action.php" method="post">
-            <h2>LOG IN</h2>
-            <a href="module/pages/forgot.php">Forgotten Your Password?</a>
+        <form name="f1" action="../action/forgot-action.php" method="post">
+            <h2>Forgot password</h2>
             <hr>
             <section class="form">
                 <section class="form-input">
                     <label for="email"><b>Email</b></label>
                     <input id="mail" class="form-control"  type="email" placeholder="Enter email" name="email">
-                    <label for="password"><b>Password</b></label>
-                    <input id="pass" class="form-control" type="password" placeholder="Enter password" name="password">
-                    <section class="nhodn">
-                        <input type="checkbox" name="remember">
-                        <label for="nhodn">Remember to sign in</label>
-                    </section>
-                    <input type="submit" name="login" value="LogIn" class="SignUp">
+                    <input style="display:none;" type="text" name="code" value="<?=$code=rand($min,$max);?>">
+                    <input type="submit" name="forgot" value="Submit" class="SignUp">
         </form>
     </section>
     <!-- đặng nhập bằng hình thức khác -->
     <p class="or">OR</p>
     <section class="fb">
         <p>FACEBOOK</p>
-        <img src="../assets/client/images/logofb.png">
+        <img src="../../../assets/client/images/logofb.png">
     </section>
     <section class="fb">
         <p>INSTAGRAM</p>
-        <img src="../assets/client/images/logoinsta.png">
+        <img src="../../../assets/client/images/logoinsta.png">
     </section>
     </section>
     <!-- giới thiệu về đăng kí tài khoảng cho trường hợp chưa có tài khoảng -->
@@ -74,7 +69,7 @@
         </section>
     </section>
     </section>
-    <?php include "include/footer.php" ?>
+    <?php include "../../include/footer.php" ?>
     </section>
 </body>
 
