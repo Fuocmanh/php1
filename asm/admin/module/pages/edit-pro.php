@@ -66,7 +66,7 @@
 <body>
     <h1>Edit Product</h1>
     <?php
-    require('include/connect.php');
+    require('../../include/connect.php');
     $sql = "SELECT * FROM `check`";
     $edit= $conn->query($sql);
     // lay du lieu
@@ -112,8 +112,7 @@
         <div class="mb-3">
             <label for="formFile" class="form-label">Upload images</label>
             <input class="form-control" type="file" id="formFile" name="image" >
-            <input type="hidden" name="nouploads" value="<?=$editpro['image'] ?>" multiple >
-            <img style="width: 30%; height: 30%; margin:0 auto;"src="<?= "uploads/".$editpro['image'] ?>" alt="">
+            <img style="width: 30%; height: 30%; margin:0 auto;"src="<?= "../../uploads/".$editpro['image'] ?>" alt="">
         </div>
         <button type="submit" class="btn btn-primary" name="edit">Submit</button>
         <?php
