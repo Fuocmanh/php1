@@ -70,33 +70,18 @@ require('../../include/connect.php');
 <body>
     <?php
     
-    $sql = "SELECT * FROM `check`";
+    $sql = "SELECT * FROM `products`";
     $styles= $conn->query($sql);
     ?>
     <h1>Create</h1>
-    <form action="../action/add-pro-action.php" method="POST" enctype="multipart/form-data" >
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name Product</label>
-            <input type="text" class="form-control" name="name">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"> Price</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" name="price">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Status </label>
-            <select name="active" id="" class="form-control">
-                <option value="0">Approved</option>
-                <option value="1">Denied</option>
-            </select>
-        </div>
-        <label for="exampleInputPassword1" class="form-label">Style</label>
-        <select class="form-select" aria-label="Default select example" name="style_id">
+    <form action="../action/add-img-action.php" method="POST" enctype="multipart/form-data" >
+        <label for="exampleInputPassword1" class="form-label">Products ID</label>
+        <select class="form-select" aria-label="Default select example" name="pro_id">
             <?php
              if ($styles->num_rows > 0) :
                 while ($style = $styles->fetch_assoc()) :
             ?>
-                <option class="background" value="<?= $style['style_id'] ?>"> <?=$style['Style'] ?></option>
+                <option class="background" value="<?= $style['pro_id'] ?>"> <?=$style['name'] ?></option>
             <?php
             endwhile;
         endif;
@@ -104,9 +89,21 @@ require('../../include/connect.php');
         </select>
         <div class="mb-3">
             <label for="formFile" class="form-label">Upload images</label>
-            <input class="form-control" type="file" id="formFile" name="image">
+            <input class="form-control" type="file" id="formFile" name="image1">
         </div>
-        <button type="submit" class="btn btn-primary" name="submit">Upload</button>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload images</label>
+            <input class="form-control" type="file" id="formFile" name="image2">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload images</label>
+            <input class="form-control" type="file" id="formFile" name="image3">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload images</label>
+            <input class="form-control" type="file" id="formFile" name="image4">
+        </div>
+        <button type="submit" class="btn btn-primary" name="addimg">Upload</button>
     </form>
    
 </body>

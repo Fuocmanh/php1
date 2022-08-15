@@ -67,43 +67,28 @@
     <h1>Edit Product</h1>
     <?php
     require('../../include/connect.php');
-    $sql = "SELECT * FROM `check`";
+    $sql = "SELECT * FROM `products`";
     $edit= $conn->query($sql);
     // lay du lieu
     $id = $_GET['id'];
-    $sql_up = "SELECT * FROM `products` WHERE pro_id= $id";
+    $sql_up = "SELECT * FROM `img_pro` WHERE img_id= $id";
     $editpros= $conn->query($sql_up);
     if ($editpros->num_rows > 0) :
         while ($editpro = $editpros->fetch_assoc()) :?>
-    <form method="POST" enctype="multipart/form-data" action="../action/edit-action.php">
-        <input type="hidden" name="id" value="<?=$editpro['pro_id']?>">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name Product</label>
-            <input type="text" class="form-control" name="name" value="<?= $editpro['name'] ?>">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"> Price</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" name="price" value="<?= $editpro['price'] ?>">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Status </label>
-            <select name="active" id="" class="form-control">
-            <option value="1" <?= ($editpro['active'] == 1 ? 'selected' : '') ?>>Denied</option>
-            <option value="0" <?= ($editpro['active'] == 0 ? 'selected' : '') ?>>Approved</option>
-            </select>
-        </div>
-        <label for="exampleInputPassword1" class="form-label">Style</label>
-        <select class="form-select" aria-label="Default select example" name="style_id">
+    <form method="POST" enctype="multipart/form-data" action="../action/edit-img-action.php">
+        <input type="hidden" name="img_id" value="<?=$editpro['img_id']?>">
+        <label for="exampleInputPassword1" class="form-label">Product ID</label>
+        <select class="form-select" aria-label="Default select example" name="pro_id">
             <?php
              if ($edit->num_rows > 0) :
                 while ($style = $edit->fetch_assoc()) :
             ?>
                 <option class="background" 
                 <?php
-                if($editpro['style_id']==$style['style_id']):
+                if($editpro['pro_id']==$style['pro_id']):
                     echo'selected';
                 endif;
-                ?> value="<?= $style['style_id'] ?>"> <?=$style['Style'] ?></option>
+                ?> value="<?= $style['pro_id'] ?>"> <?=$style['name'] ?></option>
             <?php
             endwhile;
         endif;
@@ -111,10 +96,26 @@
         </select>
         <div class="mb-3">
             <label for="formFile" class="form-label">Upload images</label>
-            <input class="form-control" type="file" id="formFile" name="image" >
-            <img style="width: 30%; height: 30%; margin:0 auto;"src="<?= "../../uploads/".$editpro['image'] ?>" alt="">
+            <input class="form-control" type="file" id="formFile" name="image1" >
+            <img style="width: 30%; height: 30%; margin:0 auto;"src="<?= "../../uploads/".$editpro['img1'] ?>" alt="">
         </div>
-        <button type="submit" class="btn btn-primary" name="edit">Submit</button>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload images</label>
+            <input class="form-control" type="file" id="formFile" name="image2" >
+            <img style="width: 30%; height: 30%; margin:0 auto;"src="
+            <?= "../../uploads/".$editpro['img2'] ?>" alt="">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload images</label>
+            <input class="form-control" type="file" id="formFile" name="image3" >
+            <img style="width: 30%; height: 30%; margin:0 auto;"src="<?= "../../uploads/".$editpro['img3'] ?>" alt="">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload images</label>
+            <input class="form-control" type="file" id="formFile" name="image4" >
+            <img style="width: 30%; height: 30%; margin:0 auto;"src="<?= "../../uploads/".$editpro['img4'] ?>" alt="">
+        </div>
+        <button type="submit" class="btn btn-primary" name="eedit">Submit</button>
         <?php
 endwhile;
 endif;

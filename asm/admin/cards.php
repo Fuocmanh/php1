@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin'])) {
-    header("location: pages/login.php");
+  header("location: pages/login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -12,10 +12,10 @@ if (!isset($_SESSION['admin'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cards - Admin</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/tailwind.output.css" />
+  <link rel="stylesheet" href="../assets/admin/css/tailwind.output.css" />
   <link rel="icon" href="https://pngimg.com/uploads/adidas/adidas_PNG17.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  <script src="./assets/js/init-alpine.js"></script>
+  <script src="../assets/admin/js/init-alpine.js"></script>
 </head>
 
 <body>
@@ -110,11 +110,11 @@ if (!isset($_SESSION['admin'])) {
           </li>
         </ul>
         <div class="px-6 my-6">
-        <a href="pages/create-account.php">
-               <button class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-            Create account
-            <span class="ml-2" aria-hidden="true">+</span>
-          </button>
+          <a href="pages/create-account.php">
+            <button class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+              Create account
+              <span class="ml-2" aria-hidden="true">+</span>
+            </button>
           </a>
         </div>
       </div>
@@ -211,11 +211,11 @@ if (!isset($_SESSION['admin'])) {
           </li>
         </ul>
         <div class="px-6 my-6">
-        <a href="pages/create-account.php">
-               <button class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
-            Create account
-            <span class="ml-2" aria-hidden="true">+</span>
-          </button>
+          <a href="pages/create-account.php">
+            <button class="flex items-center justify-between w-full px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+              Create account
+              <span class="ml-2" aria-hidden="true">+</span>
+            </button>
           </a>
         </div>
       </div>

@@ -43,16 +43,15 @@ $num_pro = $count_pro['member'];
                             <div class="box-down">
                                 <div class="h-bg">
                                     <div class="h-bg-inner"></div>
-                                </div>
-                                <form action="details.php" method="get">
-                                    <a class="cart" href="#">
+                                </div>    
+                                    <input type="hidden" name="id" value="<?=$pro['pro_id']?>">
+                                    <a class="cart" href="details.php?id=<?=$pro['pro_id']?>">
                                         <?php $i = $i; ?>
                                         <span class="price">$<?= $pro['price'] ?></span>
                                         <span class="add-to-cart">
                                             <button class="txt">Product Detail</button>
                                         </span>
                                     </a>
-                                </form>
                             </div>
                         </div>
                     </div>

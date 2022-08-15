@@ -11,7 +11,7 @@ require('../../include/connect.php');
         //them
         $sql = "INSERT INTO `products` (name,price,image,active,style_id) VALUES('$name','$price','$image','$active','$style_id')";
         $query = mysqli_query($conn, $sql);
-        move_uploaded_file($image_tmp, 'uploads/'   . $image);
+        move_uploaded_file($image_tmp, '../../uploads/'   . $image);
         header('location: ../../products.php');
     }
     ?>

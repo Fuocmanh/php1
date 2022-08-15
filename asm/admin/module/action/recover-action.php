@@ -109,7 +109,6 @@ if (isset($_POST['edit'])) {
         header('location: ../../pages/LogIn.php');
     }
 }
-
 ?>
 </body>
 

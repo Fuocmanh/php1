@@ -1,3 +1,7 @@
+<?php
+require('include/connect.php');
+if(isset($_GET['id'])):
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,11 +48,17 @@
         </section>
 
     </form>
+    <?php
+    $id=$_GET['id'];
+$sql="SELECT * FROM `products` p inner JOIN `img_pro` i on p.pro_id=i.pro_id WHERE pro_id='$id'";
+$pros = $conn->query($sql);
+            if ($pros->num_rows > 0) :
+                while ($pro = $pros->fetch_assoc()) :
+    ?>
     <div class="boxx" id="form1">
         <div class="left">
             <div class="img_top">
-                <img src="<?php if (isset($_GET['img'])) : echo  $_GET['img'];
-                            endif; ?>" alt="">
+                <img src="<?=$pro['img'] ?>" alt="">
             </div>
             <div class="img_bot">
                 <img src="<?php if (isset($_GET['img1'])) : echo  $_GET['img1'];
@@ -155,15 +165,12 @@
 
                     </div>
                     <h1><span>
-                            <?php
-                            if (isset($_GET['name'])) : echo  $_GET['name'];
-                            endif; ?></span></h1>
+                            <?=$pro['name']?></span></h1>
                     <div>
                         <div>
                             <div>
                                 <div>
-                                    <div><?php if (isset($_GET['price'])) : echo  $_GET['price'];
-                                            endif; ?><sup>đ</sup></div>
+                                    <div>$<?= $pro['price'];?></div>
                                 </div>
                             </div>
                         </div>
@@ -194,8 +201,14 @@
             </div>
         </div>
     </div>
-    <?php include "include/footer.php" ?>
+    <?php
+    endwhile;
+    endif;
+    include "include/footer.php" ?>
     <script src="./assets/js/app.js"></script>
 </body>
 
 </html>
+<?php
+endif;
+?>

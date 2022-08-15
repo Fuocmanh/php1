@@ -16,14 +16,14 @@ if (!isset($_SESSION['admin'])) {
     />
     <link rel="icon" href="https://pngimg.com/uploads/adidas/adidas_PNG17.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./assets/css/tailwind.output.css" />
+    <link rel="stylesheet" href="../assets/admin/css/tailwind.output.css" />
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
     ></script>
-    <script src="./assets/js/init-alpine.js"></script>
+    <script src="../assets/admin/js/init-alpine.js"></script>
     <!-- You need focus-trap.js to make the modal accessible -->
-    <script src="./assets/js/focus-trap.js" defer></script>
+    <script src="../assets/admin/js/focus-trap.js" defer></script>
   </head>
   <body>
     <div

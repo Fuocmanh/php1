@@ -12,10 +12,15 @@ if (!isset($_SESSION['admin'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tables - Admin</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/tailwind.output.css" />
+  <link rel="stylesheet" href="../assets/admin/css/tailwind.output.css" />
   <link rel="icon" href="https://pngimg.com/uploads/adidas/adidas_PNG17.png" type="image/x-icon">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  <script src="./assets/js/init-alpine.js"></script>
+  <script src="../assets/admin/js/init-alpine.js"></script>
+  <style>
+    .whitespace-no-wrap {
+    white-space: normal; 
+}
+  </style>
 </head>
 
 <body>
@@ -341,7 +346,7 @@ if (!isset($_SESSION['admin'])) {
       </header>
       <main class="h-full pb-16 overflow-y-auto">
         <div class="container grid px-6 mx-auto">
-          <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+          <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"style="text-align: center;">
             Tables
           </h2>
           <!-- CTA -->
