@@ -75,7 +75,7 @@
     $editpros= $conn->query($sql_up);
     if ($editpros->num_rows > 0) :
         while ($editpro = $editpros->fetch_assoc()) :?>
-    <form method="POST" enctype="multipart/form-data" action="include/edit-action.php">
+    <form method="POST" enctype="multipart/form-data" action="../action/edit-action.php">
         <input type="hidden" name="id" value="<?=$editpro['pro_id']?>">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name Product</label>
