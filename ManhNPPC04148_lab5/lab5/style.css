@@ -1,0 +1,29 @@
+body{
+    padding:50px;
+    margin:auto;
+}
+.all{
+    padding:30px;
+    width: 50%;
+    height: max-content;
+    margin: auto;
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+    border-radius: 3%;
+}
+.all .title-1{
+    text-align: center;
+
+}
+
+.form-all{
+    width: 80%;
+    margin:auto !important;
+}
+p
+{
+    background-image: linear-gradient(to right, #DECBA4, #3E5151);
+    font-size:20px;
+    text-align:center;
+    padding: 10px 0;
+    margin: 10px 0;
+}
