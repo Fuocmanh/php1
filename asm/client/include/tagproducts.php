@@ -46,7 +46,6 @@ $num_pro = $count_pro['member'];
                                 </div>    
                                     <input type="hidden" name="id" value="<?=$pro['pro_id']?>">
                                     <a class="cart" href="details.php?id=<?=$pro['pro_id']?>">
-                                        <?php $i = $i; ?>
                                         <span class="price">$<?= $pro['price'] ?></span>
                                         <span class="add-to-cart">
                                             <button class="txt">Product Detail</button>
@@ -68,7 +67,7 @@ $num_pro = $count_pro['member'];
                     <?php
                     for ($i = 1; $i <= ceil((int)$num_pro / $limit); $i++) :
                     ?>
-                        <li style="width:max-content; height:max-content;" ><a style="padding:5px 10px;margin:5px 10px; background-color:blanchedalmond"  href="?page=<?= $i ?>"><?= $i ?></a></li>
+                        <p style="width:max-content; height:max-content;" ><a style="padding:5px 10px;margin:5px 10px; background-color:blanchedalmond;color:black; text-decoration:none;"  href="?page=<?= $i ?>"><?= $i ?></a></p>
                     <?php
                     endfor;
                     ?>

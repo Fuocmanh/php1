@@ -12,11 +12,15 @@ $start_from = ($page - 1) * $limit;
 
 
 // $query = "SELECT * FROM users";
-$sql = "SELECT * FROM `users` ORDER BY use_id LIMIT $start_from, $limit";
-
+if(isset($_POST['search'])):
+    $key = $_POST['key'];
+    $sql = "SELECT * FROM `users` WHERE CONCAT(use_id,name,email,phone,address) LIKE '%$key%' ORDER BY use_id LIMIT $start_from, $limit";
+    $query_count = "SELECT COUNT(use_id) AS member FROM `users` WHERE CONCAT(use_id,name,email,phone,address) LIKE '%$key%'";
+    else:
+        $sql = "SELECT * FROM `users` ORDER BY use_id LIMIT $start_from, $limit";
+        $query_count = "SELECT COUNT(use_id) AS member FROM `users`";
+    endif;
 $users = $conn->query($sql);
-$query_count = "SELECT COUNT(use_id) AS member FROM `users`";
-
 $count_user = $conn->query($query_count);
 $count_user = $count_user->fetch_assoc();
 $num_user = $count_user['member'];

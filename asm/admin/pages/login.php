@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 
@@ -10,6 +13,15 @@
   <link rel="stylesheet" href="../../assets/admin/css/tailwind.output.css" />
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="../../assets/admin/js/init-alpine.js"></script>
+  <style>
+    .alert{
+      color:#dc3545;
+    }
+    .alertt{
+      color:#28a745;
+    }
+    
+  </style>
 </head>
 
 <body>
@@ -25,7 +37,41 @@
             <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
               Login
             </h1>
-            <form action="../module/action/login-action.php" method="post">
+            <?php
+            if (isset($_POST['logad'])) {
+              require ('../include/connect.php');
+          
+              $email = $_POST['email'];
+              $password = md5($_POST['password']);
+          
+              $q = "SELECT name,pass FROM `admin` WHERE email='$email' AND pass='$password'";
+              // $row = $conn->query($query)->fetch_assoc();
+              // var_dump($row);
+              $query=$conn->query("SELECT name,pass FROM `admin` WHERE email='$email'")->fetch_assoc();
+              if ($email == "" || $password =="") { ?>
+    
+                <div class="alert alert-danger text-center" role="alert"><strong>**Please Enter Full Information!</strong></div>
+                   
+                <?php } else if(empty($query)) { ?>
+                    <div class="alert alert-danger text-center" role="alert"><strong>**Account Does Not Exist!</strong></div>
+               <?php } else if($password != $query['pass']) { ?>
+                    <div class="alert alert-danger text-center" role="alert"><strong>**Incorrect Password!</strong></div>
+                    <?php } else {
+                 ?><div class="alertt alert-danger text-center" role="alert"><strong>**Login successful!!</strong></div><?php
+$_SESSION['admin'] = $query['name'];            
+                     echo '<meta http-equiv="refresh" content="1;url=/php1/asm/admin/">';
+                }
+              
+              // if ($conn->query($query)->num_rows > 0) {
+              //     $_SESSION['admin'] = $email;
+              //     header('location: ../../index.php');
+              // } else {
+              //     header('location: ../pages/login-404.php');
+              // }
+          }
+            ?>
+            <form action="" method="post">
+            <!-- <form action="../module/action/login-action.php" method="post"> -->
               <label class="block text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Email</span>
                 <input class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" type="email" placeholder="Jane Doe" required name="email" />

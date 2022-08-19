@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +11,9 @@
   <link rel="icon" href="https://pngimg.com/uploads/adidas/adidas_PNG17.png" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script type="text/javascript" src="../assets/client/javascript/signup.js">
+    
   </script>
+   <link rel="stylesheet" href="../assets/client/css/header.css">
 </head>
 
 <body>

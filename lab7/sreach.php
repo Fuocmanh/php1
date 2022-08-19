@@ -54,7 +54,6 @@ require('cn.php');
                 $query = mysqli_query($conn, $sql);
                 if (mysqli_num_rows($query) > 0) {
                     foreach ($query as $item) {
-
             ?>
                         <tr>
                             <th scope="row"><?= $item['id'] ?></th>

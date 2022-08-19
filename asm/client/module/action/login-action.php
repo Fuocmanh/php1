@@ -1,4 +1,5 @@
 <?php
+session_start();
 // check submit 
 if (isset($_POST['login'])) {
     // ket noi co so du lieu 
@@ -9,11 +10,8 @@ if (isset($_POST['login'])) {
     $pas = md5($pass);
     // lấy db
     $get = "SELECT * FROM users where email='$email' and pass='$pas'";
-    // biến đếm
-    $count = 0;
-    if ($conn->query($get)->num_rows > 0) :
-        header("Location: ../../../index.php");
-    else :
-        echo 'sai mk';
-    endif;
+    $gett=$conn->query($get)->fetch_assoc();
+    $_SESSION['user'] = $gett['name']; 
+    $_SESSION['user_id'] = $gett['use_id']; 
+    header('location: ../../../index.php');    
 }

@@ -1,4 +1,7 @@
-<?php require('client/include/connect.php') ?>
+<?php
+session_start();
+ require('client/include/connect.php') ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +13,10 @@
     <link href='https://css.gg/play-pause.css' rel='stylesheet'>
     <link rel="icon" href="https://pngimg.com/uploads/adidas/adidas_PNG17.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://css.gg/play-stop.css' rel='stylesheet'>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./assets/client/css/products.css">
     <link rel="stylesheet" href="./assets/client/css/index.css">
 </head>
 
@@ -32,8 +35,7 @@
                         <section class="text" style="z-index: 999;">
                             <img src="./assets/client/images/logobanner.png">
                             <p>
-                                Hành trình của bạn đang bắt đầu. Bóng thi đấu chính thức của FIFA World Cup Qatar 2022™. Mở bán
-                                độc quyền tại đây đến ngày 12/4
+                            Your journey is beginning. Official competition ball of the FIFA World Cup Qatar 2022™. Open for sale exclusively here until 12/4
                             </p>
                             <a href="./client/products.php">
                                 <p class="buttom-bannerr">SHOP NOW →</p>
@@ -124,7 +126,7 @@
     <div style="margin-top:50px">
 
         <h2>WHO ARE YOU SHOPPING FOR?</h2>
-        <section class="row">
+        <!-- <section class="row">
             <?php
             $q = "SELECT c.Style FROM `check` c";
        
@@ -145,7 +147,7 @@
             endif;
             ?>
 
-        </section>
+        </section> -->
         <h2 style="margin-top:50px">BEST OF ADIDAS</h2>
         <section class="items">
             <?php include "./client/include/bestofadidas.php" ?>

@@ -8,8 +8,16 @@ if (isset($_GET['page'])) {
     $page = 1;
 }
 $start_from = ($page - 1) * $limit;
-$sql = "SELECT * FROM `products` INNER JOIN `check` ON products.style_id = check.style_id ORDER BY `pro_id` ASC LIMIT $start_from, $limit";
-$query_pro = "SELECT COUNT(pro_id) AS member FROM `products`";
+if (isset($_POST['search'])) :
+    $key = $_POST['key'];
+    $sql = "SELECT * FROM `products` INNER JOIN `check` ON products.style_id = check.style_id WHERE CONCAT(name,price,style) LIKE '%$key%' ORDER BY `pro_id` ASC LIMIT $start_from, $limit";
+    $query_pro = "SELECT COUNT(pro_id) AS member FROM `products` INNER JOIN `check` ON products.style_id = check.style_id WHERE CONCAT(name,price,style) LIKE '%$key%'";
+else :
+
+    $sql = "SELECT * FROM `products` INNER JOIN `check` ON products.style_id = check.style_id ORDER BY `pro_id` ASC LIMIT $start_from, $limit";
+    $query_pro = "SELECT COUNT(pro_id) AS member FROM `products`";
+endif;
+
 $count_pro = $conn->query($query_pro);
 $count_pro = $count_pro->fetch_assoc();
 $num_pro = $count_pro['member'];
@@ -32,6 +40,7 @@ $num_pro = $count_pro['member'];
         height: 35px;
     }
 </style>
+
 <h4 class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300">
     Table products
 </h4>
@@ -96,6 +105,12 @@ $num_pro = $count_pro['member'];
                                     <a href="module/action/del-action.php?id=<?= $pro['pro_id']; ?>" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="module/action/view-action.php?id=<?= $pro['pro_id']; ?>" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Delete">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                         </svg>
                                     </a>
                                 </div>

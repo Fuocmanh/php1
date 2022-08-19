@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../assets/client/css/LogIn.css">
     <link rel="icon" href="https://pngimg.com/uploads/adidas/adidas_PNG17.png" type="image/x-icon">
     <script type="text/javascript" src="../assets/client/javascript/login.js"> </script>
+    <link rel="stylesheet" href="../assets/client/css/header.css">
 </head>
 
 <body>

@@ -1,0 +1,52 @@
+# <files .htaccess="">
+# order allow,deny
+# deny from all
+# </files>
+
+# RewriteEngine On
+# ErrorDocument 404 /pages/404.php
+
+# RewriteRule ^login$ /pages/login.php [L]
+# RewriteRule ^signup$ /pages/signup.php [L]
+# RewriteRule ^logout$ /pages/logout.php [L]
+
+# RewriteRule ^tao-bai-viet$ /pages/taobaiviet.php [L]
+# RewriteRule ^forum/([A-Za-z0-9-]+)$ /pages/bai.php?id=$1 [L]
+# RewriteRule ^profile$ /pages/profile.php [L]
+# RewriteRule ^doi-mat-khau /pages/doipass.php [L]
+
+
+<files .htaccess="">
+order allow,deny
+deny from all
+</files>
+
+RewriteEngine On
+ErrorDocument 404 pages/404.php
+
+RewriteRule ^login$ pages/login.php [L]
+RewriteRule ^signup$ pages/signup.php [L]
+RewriteRule ^logout$ pages/logout.php [L]
+
+RewriteRule ^tao-bai-viet$ pages/taobaiviet.php [L]
+RewriteRule ^forum/([A-Za-z0-9-]+)$ pages/bai.php?id=$1 [L]
+RewriteRule ^profile$ pages/profile.php [L]
+RewriteRule ^doi-mat-khau pages/doipass.php [L]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

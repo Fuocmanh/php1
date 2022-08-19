@@ -75,7 +75,7 @@ header>.menu-logo {
 a>img {
     width: 102px;
     height: 68px;
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
 header>.menu-logo>nav>ul {
@@ -86,12 +86,11 @@ header>.menu-logo>nav>ul {
 }
 
 ul>li {
-    width: 30%;
-
+    width: max-content;
+    margin: 0 auto;
 }
 
 header>.menu-logo>nav>ul>li>a {
-    margin-left: 50px;
     font-size: 24px;
     text-decoration: none;
     color: black;

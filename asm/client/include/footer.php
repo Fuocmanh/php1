@@ -46,7 +46,6 @@
              <p>Superstar</p>
              <p>Stan Smith</p>
              <p>nmd</p>
-             <p>ZX</p>
          </div>
          <div class="content_2">
              <h3>COMPANY INFO</h3>
@@ -69,7 +68,7 @@
      </div>
  </section>
  <section class="bot">
-     <p>Assignment 1</p>
+     <p>Assignment PHP1</p>
      <p>|</p>
      <p>Design by: ManhNPPC04148</p>
      <p>|</p>

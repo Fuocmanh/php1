@@ -87,8 +87,8 @@ header>.menu-logo>nav>ul {
 }
 
 ul>li {
-    width: 30%;
-
+    width: max-content;
+    margin: 0 auto;
 }
 
 header>.menu-logo>nav>ul>li>a {

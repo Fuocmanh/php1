@@ -1,6 +1,6 @@
 <?php
 require('connect.php');
-$limit = 3;
+$limit = 2;
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
@@ -10,12 +10,16 @@ if (isset($_GET['page'])) {
 
 $start_from = ($page - 1) * $limit;
 
+if(isset($_POST['search'])):
+    $key = $_POST['key'];
+    $sql = "SELECT * FROM `details` WHERE CONCAT(h2,details,color) LIKE '%$key%'ORDER BY det_id LIMIT $start_from, $limit";
+    $query_pro = "SELECT COUNT(det_id) AS  member FROM `details` WHERE CONCAT(h2,details,color) LIKE '%$key%'";
+    else:
+        $sql = "SELECT * FROM `details` ORDER BY det_id LIMIT $start_from, $limit";
+        $query_pro = "SELECT COUNT(det_id) AS member FROM `details`";
+    endif;
 
-// $query = "SELECT * FROM users";
-$sql = "SELECT * FROM `details` ORDER BY det_id LIMIT $start_from, $limit";
 
-
-$query_pro = "SELECT COUNT(det_id) AS member FROM `details`";
 
 $count_pro = $conn->query($query_pro);
 $count_pro = $count_pro->fetch_assoc();
@@ -81,7 +85,7 @@ $num_pro = $count_pro['member'];
 
                             <td class="px-4 py-3">
                                 <div class="flex items-center space-x-4 text-sm">
-                                    <a href="edit-det.php?id=<?= $de['det_id']; ?>" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
+                                    <a href="" class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit">
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
                                         </svg>
@@ -110,7 +114,6 @@ $num_pro = $count_pro['member'];
                     <?php
                     for ($i = 1; $i <= ceil((int)$num_pro / $limit); $i++) :
                     ?>
-                        <!-- <li><button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">1</button></li> -->
                         <li><a class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple" href="?page=<?= $i ?>"><?= $i ?></a></li>
                     <?php
                     endfor;

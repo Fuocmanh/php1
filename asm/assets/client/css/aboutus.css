@@ -100,7 +100,7 @@ h3 {
     font-size: 36px;
     line-height: 32px;
 }
-
+/* 
 
 header {
     width: 100%;
@@ -147,7 +147,7 @@ header>.menu-logo {
 a>img {
     width: 102px;
     height: 68px;
-    margin-left: 50px;
+   margin: 0 auto;
 }
 
 header>.menu-logo>nav>ul {
@@ -158,12 +158,12 @@ header>.menu-logo>nav>ul {
 }
 
 ul>li {
-    width: 30%;
-
+    width: max-content;
+    margin: 0 auto;
 }
 
 header>.menu-logo>nav>ul>li>a {
-    margin-left: 50px;
+    margin-left: 0px;
     font-size: 24px;
     text-decoration: none;
     color: black;
@@ -215,7 +215,7 @@ header>.menu-logo>nav>ul>li>a:hover {
 
 .n .dropdown:hover .dropdown-content {
     display: block;
-}
+} */
 
 .left {
     display: flex;
@@ -669,4 +669,8 @@ footer>.bot {
 #box {
     width: 100%;
     height: 107px;
+}
+input{
+    border: 1px solid #767676 !important;
+    border-radius: 5px;
 }

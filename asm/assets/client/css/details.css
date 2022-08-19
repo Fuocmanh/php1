@@ -334,7 +334,7 @@ header>.menu-logo {
 a>img {
     width: 102px;
     height: 68px;
-    margin-left: 50px;
+    margin-right: 50px;
 }
 
 header>.menu-logo>nav>ul {
@@ -345,8 +345,8 @@ header>.menu-logo>nav>ul {
 }
 
 ul>li {
-    width: 30%;
-    text-align: center;
+    width: max-content;
+    margin: 0 auto;
 }
 
 header>.menu-logo>nav>ul>li>a {

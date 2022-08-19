@@ -1,6 +1,6 @@
 <?php
 require('connect.php');
-$limit = 3;
+$limit = 2;
 
 if (isset($_GET['page'])) {
     $page = $_GET['page'];
