@@ -89,11 +89,11 @@ if (empty($_SESSION['user'])) {
                                     }
                                     ?>
                                 </td>
-                                <td>$ 
+                                <td>
                                     <?php
                                     foreach ($chitiethoadon as $cthd) {
                                         $gia = $cthd['price'];
-                                        echo $gia . '<br>';
+                                        echo '$'.$gia . '<br>';
                                     }
                                     ?>
                                 </td>

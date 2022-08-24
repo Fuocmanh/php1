@@ -62,12 +62,10 @@ if (empty($_SESSION['user'])) {
                         <?php
                         require 'include/connect.php';
 
-                        // var_dump($_COOKIE['cart']);
+         
                         $cookie_data = $_COOKIE['cart'];
                         $cart_data = json_decode($cookie_data, true);
-
-                        $tongtatca = 0;
-                        // var_dump($cart_data);
+                        $tongtatca = 0;         
                         foreach ($cart_data as $sp) :
                             $tongtien = $sp['price'] * $sp['soluong'];
                             $tongtatca += $tongtien;

@@ -68,10 +68,10 @@ $num_pro = $count_pro['member'];
                                     }
                                     ?>
                                 </td>
-                                <td class="px-4 py-3">$<?php
+                                <td class="px-4 py-3"><?php
                                                         foreach ($chitiethoadon as $cthd) {
                                                             $gia = $cthd['price'];
-                                                            echo $gia . '<br>';
+                                                            echo '$'.$gia . '<br>';
                                                         }
                                                         ?>
                                 </td>

@@ -27,15 +27,10 @@ require('include/connect.php');
         <h1 class="heading"> Products </h1>
       <?php 
       require('include/tagproducts.php');
-?>
-
-     
+?>  
     </section>
     <?php
-    
-    
-    include 'include/footer.php';
-         
+    include 'include/footer.php';      
     ?>
     </section>
 </body>

@@ -9,12 +9,15 @@ if (isset($_GET['page'])) {
 
 $start_from = ($page - 1) * $limit;
 
-
-// $query = "SELECT * FROM users";
-$sql = "SELECT * FROM `products` INNER JOIN `check` ON products.style_id = check.style_id ORDER BY `pro_id` ASC LIMIT $start_from, $limit";
-
-
-$query_pro = "SELECT COUNT(pro_id) AS member FROM `products`";
+if(isset($_POST['search'])):
+$key = $_POST['key'];
+$sql = "SELECT * FROM `products` INNER JOIN `check` ON products.style_id = check.style_id WHERE (name,price) LIKE '%$key%' ORDER BY `pro_id` ASC LIMIT $start_from, $limit";
+$query_pro = "SELECT COUNT(pro_id) AS member FROM `products` WHERE CONCAT(name,price) LIKE '%$key%'";
+else:
+    
+    $sql = "SELECT * FROM `products` INNER JOIN `check` ON products.style_id = check.style_id ORDER BY `pro_id` ASC LIMIT $start_from, $limit";
+    $query_pro = "SELECT COUNT(pro_id) AS member FROM `products`";
+endif;
 
 $count_pro = $conn->query($query_pro);
 $count_pro = $count_pro->fetch_assoc();

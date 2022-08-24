@@ -59,7 +59,7 @@ $num_user = $count_user['member'];
                                     <div>
                                         <p class="font-semibold"><?= $user['name'] ?></p>
                                         <p class="text-xs text-gray-600 dark:text-gray-400">
-                                            10x Developer
+                                            user
                                         </p>
                                     </div>
                                 </div>
